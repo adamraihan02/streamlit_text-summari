@@ -3,6 +3,12 @@ from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 from heapq import nlargest
 
+try:
+    nlp = spacy.load("en_core_web_sm")
+    print("Model en_core_web_sm berhasil dimuat!")
+except OSError:
+    print("Model en_core_web_sm tidak ditemukan.")
+
 def summarizer(rawdocs):
     nlp = spacy.load('en_core_web_sm')
     stopwords = list(STOP_WORDS)
