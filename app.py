@@ -40,7 +40,7 @@ def create_download_link(text, filename="summary.txt"):
 
 # Judul aplikasi
 st.title("🔗 Text Summarization")
-st.write("Input teks artikel yang ingin anda meringkasnya, dan aplikasi ini akan membuat ringkasannya.")
+st.write("Input teks artikel yang ingin anda meringkasnya, dan aplikasi ini akan membuat ringkasan secara otomatis.")
 
 # Input teks dari pengguna
 user_input = st.text_area("Masukkan teks di bawah ini:", height=200)
