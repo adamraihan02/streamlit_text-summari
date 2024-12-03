@@ -28,6 +28,7 @@ def summarizer(rawdocs):
     final_summary = [sent.text for sent in summary]
     summary = ' '.join(final_summary)
 
+    # Mengembalikan panjang teks asli dan ringkasan
     original_length = len(rawdocs.split())
     summary_length = len(summary.split())
 
