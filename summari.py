@@ -2,19 +2,10 @@ import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 from heapq import nlargest
-
-# Memuat model sekali saja
-try:
-    nlp = spacy.load("en_core_web_sm")
-    print("Model en_core_web_sm berhasil dimuat!")
-except OSError:
-    print("Model en_core_web_sm tidak ditemukan.")
-    nlp = None
+from spacy.cli import download
 
 def summarizer(rawdocs):
-    if nlp is None:
-        raise ValueError("Model 'en_core_web_sm' belum dimuat. Pastikan model telah diinstal.")
-    
+    nlp = spacy.load('en_core_web_sm')
     stopwords = list(STOP_WORDS)
     doc = nlp(rawdocs)
     
